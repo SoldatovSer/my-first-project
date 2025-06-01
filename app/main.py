@@ -4,6 +4,11 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.post("/calculate")
-async def root(num1: int, num2: int):
-    return {"result": num1 + num2}
+@app.get("/")
+def read_root():
+    return {"message": "Hello world!"}
+
+
+@app.get("/custom")
+def read_custom_message():
+    return {"message": "This is custom message!"}
